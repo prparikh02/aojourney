@@ -1,0 +1,4 @@
+.git/
+.vscode/
+cdk/venv/
+cdk/node_modules/
