@@ -130,7 +130,7 @@ class AOJourneyStack(core.Stack):
             self,
             'aojourney-react-app-bucket',
             website_index_document='index.html',
-            public_read_access=True,
+            block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
         )
         # Deny non-SSL traffic
         website_bucket.add_to_resource_policy(iam.PolicyStatement(
@@ -159,6 +159,12 @@ class AOJourneyStack(core.Stack):
         )
 
         # Define Cloudfront distribution
+        origin_access_identity = cf.OriginAccessIdentity(
+            self,
+            'OriginAccessIdentity',
+            comment='Stack=[AOJourney] OAI to reach bucket',
+        )
+        website_bucket.grant_read(origin_access_identity)
         cf_distro = cf.CloudFrontWebDistribution(
             self,
             'aojourney-distribution',
@@ -166,6 +172,7 @@ class AOJourneyStack(core.Stack):
                 cf.SourceConfiguration(
                     s3_origin_source=cf.S3OriginConfig(
                         s3_bucket_source=website_bucket,
+                        origin_access_identity=origin_access_identity,
                     ),
                     behaviors=[
                         cf.Behavior(

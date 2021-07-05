@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home'
-import AppliedRoute from './components/AppliedRoutes';
+import Home2 from './Home2'
+import Header from './Header';
+import Footer from './Footer';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Switch>
-          <AppliedRoute path='/' exact component={Home} props={{}} />
-        </Switch>
+        <div>
+          <Header />
+          <hr />
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route path='/home'>
+              <Home2 />
+            </Route>
+          </Switch>
+          <Footer />
+        </div>
       </BrowserRouter>
     );
   }

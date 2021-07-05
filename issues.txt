@@ -1,0 +1,37 @@
+Security:
+- Move off AWS Amplify library because it uses browser local storage for JWT tokens
+  - Implement custom lambda authorizer for API Gateway that validates JWT tokens
+    - Send back httpOnly cookies for tokens
+  - Remove Cognito authorizer
+- API Gateway throttling
+- Learn how to use the Cognito RefreshToken
+- Remove CORS access for localhost and come up with alternative
+- Use fetch withouth explicit domain
+
+Frontend:
+- Implement EntryDisplay modal
+- Polish modals
+- Polish home page
+- Brainstorm error scenarios in SignUp, LogIn, ConfirmSignUp, token expiration
+
+Backend Features:
+- Implement Lambda GET entries handler
+- Implement Lambda POST entry handler
+- Support entry tags
+- Support entries export
+
+Infrastructure:
+- CDK for DynamoDB table
+- Schema for DynamoDB table
+- Replicate infra for Devo/Prod
+
+Operational Excellence:
+- Add logs for Lambdas
+- CloudWatch dashboard
+- Alarms for DynamoDB
+- Alarms for Lambda
+- Clean up READMEs (cdk, frontend, project)
+- Clean up project-steps.md file
+- Differentiate between devo and prod configs
+- Define git commit template
+- Define issue template and flesh out existing issues

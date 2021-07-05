@@ -91,6 +91,8 @@ Good Reads:
     - This is the one. This is it.
   - https://medium.com/@ryanchenkie_40935/react-authentication-how-to-store-jwt-in-a-cookie-346519310e81
   - https://auth0.com/docs/tokens/concepts/token-storage
+  - https://dev.to/cotter/localstorage-vs-cookies-all-you-need-to-know-about-storing-jwt-tokens-securely-in-the-front-end-15id
+- https://medium.com/hackernoon/serverless-password-protecting-a-static-website-in-an-aws-s3-bucket-bfaaa01b8666
 
 ### Cloudfront
 

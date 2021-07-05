@@ -1,0 +1,8 @@
+{
+   "AuthParameters" : {
+      "USERNAME" : "username",
+      "PASSWORD" : "password"
+   },
+   "AuthFlow" : "USER_PASSWORD_AUTH",
+   "ClientId" : "client-id"
+}
