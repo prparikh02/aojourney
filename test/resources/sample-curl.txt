@@ -1,0 +1,24 @@
+# Cognito
+
+curl -X POST --data @signup.json \
+-H 'X-Amz-Target: AWSCognitoIdentityProviderService.SignUp' \
+-H 'Content-Type: application/x-amz-json-1.1' \
+https://cognito-idp.us-east-1.amazonaws.com/ | jq
+
+
+curl -X POST --data @initiate-auth.json \
+-H 'X-Amz-Target: AWSCognitoIdentityProviderService.InitiateAuth' \
+-H 'Content-Type: application/x-amz-json-1.1' \
+https://cognito-idp.us-east-1.amazonaws.com/ | jq
+
+
+# API Gateway
+
+curl -X GET 'https://4hxrvi5ze1.execute-api.us-east-1.amazonaws.com/prod/entries' \
+-H 'Authorization: <ID_TOKEN>'
+
+curl -X GET 'https://d1jrq2r75afyvw.cloudfront.net/prod/entries' \
+-H 'Authorization: <ID_TOKEN>'
+
+curl -X GET 'https://journal.parthrparikh.com/prod/entries' \
+-H 'Authorization: <ID_TOKEN>'
